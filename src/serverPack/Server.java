@@ -1,19 +1,14 @@
 package serverPack;
 
-import messagePack.*;
-
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
 	public static void main(String[] args) throws Exception {
-		
 		try (ServerSocket serverListener = new ServerSocket(7777)) {
-			System.out.println("Server is listening on port 7777");
+			System.out.println("Server is listening on port 7777, " + "IP: " + InetAddress.getLocalHost().getHostAddress().trim());
 			while (true) {
 				// accept client connections
 				Socket client = serverListener.accept(); // blocks
